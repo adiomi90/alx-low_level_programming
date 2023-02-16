@@ -1,6 +1,8 @@
 #include <stdio.h>
-/*
- * main entry
+
+/**
+ * main -entry
+ * Return: success
  */
 int main(void)
 {
