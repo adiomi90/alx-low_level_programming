@@ -1,10 +1,10 @@
 #include <stdio.h>
 
 /**
- * main - entry 
- * 
- * Return: success
- */
+* main - entry 
+* 
+* Return: success
+*/
 int main(void)
 {
 	int a;
