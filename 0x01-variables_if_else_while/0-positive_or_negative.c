@@ -1,7 +1,11 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-
+/**
+ * main - prints a random number
+ * positve , negative or zerro
+ * Return: 0
+ */
 int main(void)
 {
 	int n;
@@ -10,14 +14,14 @@ int main(void)
 	n = rand() - RAND_MAX/2;
 	if(n > 0)
 	{
-		printf("is positive");
+		printf("%d is positive\n",n);
 	}
 	else if(n == 0)
 	{
-	       printf("is zero");
+	       printf("%d is zero\n",n);
 	}else
 	{
-		printf("is neggaive");
+		printf("%d is negative\n",n);
 	}
 	return (0);
 }	
