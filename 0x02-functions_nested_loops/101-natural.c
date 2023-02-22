@@ -13,7 +13,7 @@ int main(void)
 			sum +=i;
 	}
 
-	printf("%\d",sum);
+	printf("%d",sum);
 	
 	return (0);
 }
