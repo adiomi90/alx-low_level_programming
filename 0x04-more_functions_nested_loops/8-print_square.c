@@ -1,4 +1,5 @@
-#include "main.h"
+
+#include "holberton.h"
 
 /**
  * print_square - Prints a squareusing the character #.
@@ -22,4 +23,4 @@ void print_square(int size)
 	}
 
 	_putchar('\n');
-
+}
