@@ -7,8 +7,7 @@
  */
 void print_numbers(void)
 {
-	int i;
-	i = 1;
+	int i = 0;
 	while ( i < 10)
 	{
 		_putchar(i);
