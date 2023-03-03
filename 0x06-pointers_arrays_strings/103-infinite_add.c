@@ -1,46 +1,54 @@
 #include "main.h"
+
 /**
-  * infinite_add - adds two numbers
-  * @n1: number1
-  * @n2: number2
-  * @r: result
-  * @size_r: size result
-  * Return: r addition
-**/
+* infinite_add - a function that adds two numbers
+* @n1: a char pointer given by main that represents a num
+* @n2: a char pointer given by main that represents a num
+* @r: a buffer given by main
+* @size_r: the buffer size given by main
+*
+* Description: a function that adds numbers that are passed
+*	as a strings and we add them up
+* Return: the result to char *r
+*/
+
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int i = 0, j = 0, a, b, c, n, aux, dec = 0;
+	int i = 0, j = 0, k = 0;
+	int sum = 0;
+	int tens = 0;
+	int begin = 0;
+	int swap = 0;
 
-	while (n1[i] != '\0')
+	while (n1[i] != 0)/* A */
+		i++;
+	while (n2[j] != 0)
+		j++;
+	i--;/* C */
+	j--;
+	if (i > size_r || j > size_r)/* D */
+		return (0);
+	for ( ; k < size_r; i--, j--, k++)/* E */
 	{
-	i++;
+		sum = tens;
+		if (i >= 0)/* F */
+			sum += n1[i] - '0';
+		if (j >= 0)
+			sum += n2[j] - '0';
+		if (i < 0 && j < 0 && sum == 0)/* G */
+			break;
+		tens = sum / 10;/* H */
+		r[k] = sum % 10 + '0';
 	}
-	while (n2[j] != '\0')
+	if (i >= 0 || j >= 0 || sum > 0)/* J */
+		return (0);
+	r[k] = '\0';/* K */
+	k--;
+	for ( ; begin < k; k--, begin++)/* I */
 	{
-	j++;
+		swap = r[k];
+		r[k] = r[begin];
+		r[begin] = swap;
 	}
-	for (n = 0; n < j || n < i; n++)
-	{
-	a = (i - n) > 0 ? (n1[i - n - 1] - '0') : 0;
-	b = (j - n) > 0 ? (n2[j - n - 1] - '0') : 0;
-	c = a + b + dec;
-	r[n] = (c % 10) + '0';
-	dec = c > 9 ? 1 : 0;
-	}
-	if (dec == 1)
-	{ r[n] = '1';
-	r[n + 1] = '\0'; }
-	else
-	{ r[n] = '\0';
-	n--; }
-	for (i = 0; i < n + 1; i++)
-	{
-	for (j = 0; j < (n - i); j++)
-	{
-	aux = r[j + 1];
-	r[j + 1] = r[j];
-	r[j] = aux;
-	}
-	}
-return (n < size_r - 1 ? r : 0);
+	return (r);
 }
