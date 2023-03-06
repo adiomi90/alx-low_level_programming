@@ -4,7 +4,7 @@
  * _memcpy -function
  * *@dest: destination
  * *@src: source
- * @n: number 
+ * @n: number
  * Return: 0
  */
 
