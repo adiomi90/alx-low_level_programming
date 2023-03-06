@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 /**
 * _strchr - function name
 * *@s: return memory address
