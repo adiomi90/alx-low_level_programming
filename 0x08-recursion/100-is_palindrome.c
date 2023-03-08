@@ -1,4 +1,3 @@
-
 #include "main.h"
 /**
 * is_palindrome - Entry point
