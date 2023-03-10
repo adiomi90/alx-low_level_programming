@@ -1,5 +1,5 @@
 #include "main.h"
-/*
+/**
  * substring_match - check if a substring after wildcard matches s1
  * Description: check the substring using wildcard
  * @s1: one string
