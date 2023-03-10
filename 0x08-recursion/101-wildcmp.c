@@ -1,7 +1,7 @@
 #include "main.h"
 /*
  * substring_match - check if a substring after wildcard matches s1
- * Desciption: check the substring using wildcard
+ * Description: check the substring using wildcard
  * @s1: one string
  * @s2: one string
  * @after_wldcd: placeholder for position right after wildcard
@@ -26,6 +26,7 @@ int substring_match(char *s1, char *s2, char *after_wldcd)
 
 /**
  * wildcmp - compare if string with wildcard mattches
+ * Description: a function that compares two numbers
  * @s1: one string
  * @s2: one string
  * Return: 1 if matched, 0 if not
