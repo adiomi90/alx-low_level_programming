@@ -3,8 +3,8 @@
 /**
  * create_array - Create an array of chars
  * @size: The size of the array
- * @c: the specific char 
- * Return: 0 when ==0 or fail = null
+ * @c: the specific char
+ * Return: 0 when is 0 or fail is null
  */
 
 char *create_array(unsigned int size, char c)
@@ -20,7 +20,7 @@ char *create_array(unsigned int size, char c)
 	if (array == NULL)
 		return (NULL);
 
-	for(index =0; index < size; index++)
+	for (index = 0; index < size; index++)
 		array[index] = c;
 
 	return (array);
