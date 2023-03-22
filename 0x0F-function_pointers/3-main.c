@@ -1,42 +1,36 @@
 #include "3-calc.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
- * main - check the code for Holberton School students.
- * @argc: argument count.
- * @argv: argument vector.
+ * main - operate two numbers
  *
- * Return: Always 0.
+ * @argc: The qty of parameters
+ * @argv: The parameters array
+ *
+ * Return: The add
+ *
  */
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	int a, b;
-	int (*operation)(int, int);
+char o = argv[2][0];
+char o2 = argv[2][1];
 
 	if (argc != 4)
 	{
 		printf("Error\n");
-		exit(98);
+		return (98);
 	}
-
-	if (argv[2][1])
+	if ((o != '+' && o != '-' && o != '*' && o != '/' && o != '%') || o2 != '\0')
 	{
 		printf("Error\n");
-		exit(99);
+		return (99);
 	}
-
-	operation = get_op_func(argv[2]);
-
-	if (operation == NULL)
+	if ((o == '/' || o == '%') && atoi(argv[3]) == 0)
 	{
 		printf("Error\n");
-		exit(99);
+		return (100);
 	}
 
-	a = atoi(argv[1]);
-	b = atoi(argv[3]);
+	printf("%d\n", get_op_func(argv[2])(atoi(argv[1]), atoi(argv[3])));
 
-	printf("%d\n", operation(a, b));
 	return (0);
 }
