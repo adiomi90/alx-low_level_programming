@@ -6,6 +6,7 @@
  * @l: left index of original array
  * @r: right index of original array
  */
+
 void print_array(int *array, size_t left, size_t right)
 {
 	size_t i = 0;
@@ -27,6 +28,7 @@ void print_array(int *array, size_t left, size_t right)
  * @value: value to search for
  * Return: index at which value's found
  */
+
 int binary_search(int *array, size_t size, int value)
 {
 	size_t middle = 0;
