@@ -7,6 +7,9 @@
  *
  * Return: Pointer to the first node where the value is located, or NULL if not found.
  */
+
+#include "search_algos.h"
+
 skiplist_t *linear_skip(skiplist_t *list, int value) {
     skiplist_t *current, *express;
 
@@ -23,7 +26,7 @@ skiplist_t *linear_skip(skiplist_t *list, int value) {
             printf("Value found between indexes [%lu] and [%lu]\n",
                    current->index, express->index);
 
-            while (current != NULL && current->index <= express->index) {
+            while (current != NULL && current->index < express->index) {
                 printf("Value checked at index [%lu] = [%d]\n", current->index, current->n);
 
                 if (current->n == value) {
@@ -34,7 +37,19 @@ skiplist_t *linear_skip(skiplist_t *list, int value) {
                 current = current->next;
             }
 
-            break;  /* Value not found or found in regular lane */
+            /* Handle the case when the value is not in the express lane */
+            while (current != NULL) {
+                printf("Value checked at index [%lu] = [%d]\n", current->index, current->n);
+
+                if (current->n == value) {
+                    printf("Found %d at index: %lu\n", value, current->index);
+                    return current;
+                }
+
+                current = current->next;
+            }
+
+            break;  /* Value not found in regular lane */
         }
 
         current = express;
