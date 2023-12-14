@@ -1,6 +1,16 @@
 #include "search_algos.h"
 
-skiplist_t *linear_skip(skiplist_t *list, int value) {
+/**
+ * linear_skip - using linear skip algorithm to search in singly
+ * 		 linked list
+ * @list: the head pointer
+ * @value: the value to search for
+ * Return: a pointer to the first node value or NULL
+ */
+
+
+skiplist_t *linear_skip(skiplist_t *list, int value)
+{
     skiplist_t *current = list, *express;
 
     if (list == NULL)
